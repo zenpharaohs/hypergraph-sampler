@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hypergraph-sampler"
+version = "0.1.0"
+description = "Random graphs and uniform hypergraphs: exact and approximate samplers (C core, Python binding)"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Andrew Mullhaupt" }]
+requires-python = ">=3.9"
+dependencies = ["numpy"]
+
+[project.optional-dependencies]
+test = ["pytest", "scipy"]
+
+[tool.setuptools]
+package-dir = { "" = "python" }
+packages = ["hypergraph_sampler"]
+
+[tool.pytest.ini_options]
+pythonpath = ["python"]
+testpaths = ["tests"]
